@@ -5,7 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model {
 
 	protected $fillable = array(
-		'name'
+		'name',
+		'type'
 	);
 
 	public function parentCategories()
@@ -28,6 +29,32 @@ class Category extends Model {
 
 		return $this->belongsToMany('App\Product');
 
+	}
+
+	public function hasParentCategories() {
+
+		if ($this->has('parentCategories' , '>', 0)) {
+
+			return true;
+
+		} else {
+
+			return false;
+
+		}
+	}
+
+	public function hasSubCategories() {
+
+		if ($this->has('subCategories' , '>', 0)) {
+
+			return true;
+
+		} else {
+
+			return false;
+			
+		}
 	}
 
 }

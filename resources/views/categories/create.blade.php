@@ -41,6 +41,14 @@
 		</div>
 
 		<div class="form-group">
+			{!! Form::label('type', 'Category Type:') !!}
+			<select name="type">
+				<option value="product">Product</option>
+				<option value="article">Article</option>
+			</select>
+		</div>
+
+		<div class="form-group">
 			{!! Form::submit("Add Category", ['class' => 'btn btn-primary form-control']) !!}
 		</div>
 

@@ -16,7 +16,12 @@
 				<li><a href="{{ url('about') }}">About</a></li>
 				<li><a href="{{ url('contact') }}">Contact</a></li>
 				<li><a href="{{ url('articles') }}">Articles</a></li>
-				<li><a href="{{ url('products') }}">Products</a></li>
+				<li>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
+					aria-expanded="false">
+						Products <span class="caret"></span>
+					</a>
+				</li>
 				@if( \Auth::user() && \Auth::user()->hasRole('admin') )
 					<li><a href="{{ url('admin') }}">Admin</a></li>
 				@endif

@@ -25,7 +25,7 @@ class CategoriesController extends Controller {
 	public function create() {
 
 		$categories = Category::all();
-		//$categories = Category::lists('name','id');
+		
 		$pictures = Picture::all();
 
 		return view('categories.create')->with([

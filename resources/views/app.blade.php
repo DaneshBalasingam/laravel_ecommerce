@@ -23,7 +23,49 @@
 	</head>
 	<body>
 		<header>
+			@unless ($categories->isEmpty())
 
+				<ul>
+					<li>Products
+						<ul>
+						
+							@foreach ($categories as $category)
+
+								@if ( $category->type == 'product' && $category->parentCategories->isEmpty())
+									
+									<li>{{ $category->name }}
+										@if( !$category->subCategories->isEmpty() )
+											<ul>
+												@foreach ( $category->subCategories as $sub_cat )
+													<li>{{ $sub_cat->name }}</li>
+												@endforeach
+											</ul>
+										@endif	
+
+									</li>
+								@endif
+							@endforeach
+						
+						</ul>
+					</li>
+					<li>Article
+						<ul>
+							@foreach ($categories as $category)
+
+								@if ( $category->type == 'article')
+								
+									<li>{{ $category->name }}</li>
+
+								@endif
+
+							@endforeach
+						</ul>
+
+					</li>
+				</ul>
+
+			@endunless
+			
 
 		</header>
 
