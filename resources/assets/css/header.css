@@ -1,0 +1,135 @@
+/**
+header
+**/
+
+#header {
+	width: 100%;
+	height: 95px;
+	background-repeat: no-repeat;
+
+}
+
+#site-logo {
+	float: left;	
+	margin-left: 20px;
+
+}
+
+#header-user {
+
+	float: right;
+	margin-right: 20px;
+	padding-top: 10px;
+
+	color: #1975A3;
+
+	font-size: 18px;
+
+}
+
+#logo-img {
+    float: left;
+    padding-top: 2px;
+}
+
+#logo-text {
+	float: left;
+	padding-top: 18px;
+	padding-left: 5px;
+	text-align: center;	
+}
+
+#logo-head {
+	
+	margin-bottom: 0px;
+}
+
+h1.site-title {
+	margin: 0;	
+	font-size: 22px;
+}
+
+h1.site-title a {
+	color: #050500;
+}
+
+h1.site-title a:hover {
+	text-decoration: none;
+}
+
+#logo-caption {
+	font-size: 14px;
+}
+
+.account-info-widget {
+	float: left;
+}
+
+
+#welcome-user-button {
+
+	padding-right: 40px;
+}
+
+#register-button {
+	padding-right: 30px;
+}
+
+#cart_toggle {
+	float: left;
+	margin-left: 50px;
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+#cart {
+	position: absolute;
+	z-index: 200;
+	top: 40px;
+	right: 10px;
+	padding: 10px;
+	font-size: 16px;
+	color: #0F0F0A;
+}
+
+.search-field {
+	border-radius: 15px;
+    border: 1px #000 solid;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 768px) { 
+
+	#header-user {
+		display: none;
+	}
+
+	#header {
+
+		margin-top: 60px;
+		height: auto;
+
+
+	}
+
+	#site-logo {
+
+		float: none;
+		margin: 0 auto;
+		width: 40%;
+		min-width: 320px;
+
+	}
+
+	#logo-text {
+		float: none;
+		margin-top: 0px;
+	}
+
+	#logo-img {
+		float: none;
+		text-align: center;
+
+	}
+
+}

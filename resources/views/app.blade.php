@@ -22,75 +22,37 @@
 
 	</head>
 	<body>
-		<header>
-			@unless ($categories->isEmpty())
+		<div id="page-wrap">
 
-				<ul>
-					<li>Products
-						<ul>
-						
-							@foreach ($categories as $category)
-
-								@if ( $category->type == 'product' && $category->parentCategories->isEmpty())
-									
-									<li>{{ $category->name }}
-										@if( !$category->subCategories->isEmpty() )
-											<ul>
-												@foreach ( $category->subCategories as $sub_cat )
-													<li>{{ $sub_cat->name }}</li>
-												@endforeach
-											</ul>
-										@endif	
-
-									</li>
-								@endif
-							@endforeach
-						
-						</ul>
-					</li>
-					<li>Article
-						<ul>
-							@foreach ($categories as $category)
-
-								@if ( $category->type == 'article')
-								
-									<li>{{ $category->name }}</li>
-
-								@endif
-
-							@endforeach
-						</ul>
-
-					</li>
-				</ul>
-
-			@endunless
-			
-
-		</header>
-
-		@include('partials/nav')
+			@include('partials/header')
 
 
-		<div class="container">
-			<div class="content">
+			@include('partials/nav2')
 
-				@if (session('flash_notification'))
-					<div class="alert">
-						@include('flash::message')
-					</div>
-				@endif
+			@include('partials/nav')
 
-				@yield('content')
-				
 
+			<div class="container">
+				<div class="content">
+
+					@if (session('flash_notification'))
+						<div class="alert">
+							@include('flash::message')
+						</div>
+					@endif
+
+					@yield('content')
+					
+
+				</div>
+
+					
 			</div>
 
-				
+
+			@yield('footer')
+
 		</div>
-
-
-		@yield('footer')
 
 		<script type="text/javascript" src="{{ asset('/js/all.js') }}"></script>
 

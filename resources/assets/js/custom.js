@@ -13,6 +13,8 @@ $("document").ready(function() {
 		
 	});
 
+	navigation();
+
 	loadCart();
 
 	Imagelightbox();

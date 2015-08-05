@@ -4,9 +4,15 @@ function loadCart () {
   		$('#cart_display').toggle();
 	});
 
+	$('.mobile-cart-toggle').click(function() {
+  		$('#mobile-cart').toggle();
+	});
+
 	var cart_url = $('#cart_display').attr('data-cart');
 
 	$('#cart_display').load(cart_url);
+
+	$('#mobile-cart').load(cart_url);
 
 	$(document).on('submit', 'form[update_cart]', function(e) {
 

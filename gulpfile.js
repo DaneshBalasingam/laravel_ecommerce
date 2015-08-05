@@ -23,7 +23,10 @@ elixir(function(mix) {
         'libs/select2.css',
         'libs/image-picker.css',
         'libs/jquery.Jcrop.css',
-        'custom.css'
+        'custom.css',
+        'header.css',
+        'nav.css'
+        
 
 	]);
 
@@ -36,6 +39,7 @@ elixir(function(mix) {
         'libs/jquery.color.js',
         'libs/jquery.Jcrop.js',
         'cart.js',
+        'navigation.js',
         'lightbox.js',
         'custom.js'
 

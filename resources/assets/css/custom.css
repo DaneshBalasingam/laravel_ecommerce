@@ -1,3 +1,14 @@
+/*General settings */
+.clearfix:before,.clearfix:after {
+	content:"";
+	display:table;
+}
+.clearfix:after {
+	clear:both;
+}
+
+
+
 /* 
 Lightbox for picture edit and picture selection
 */
