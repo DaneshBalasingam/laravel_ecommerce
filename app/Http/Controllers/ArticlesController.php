@@ -30,11 +30,15 @@ class ArticlesController extends Controller {
 	public function index()
 	{
 
-		$articles = Article::latest('published_at')->published()->paginate(2);
+		$articles = Article::latest('published_at')->published()->paginate(6);
 
 		$articles->setPath('articles');
 
-		return view('articles.index')->with('articles',$articles);
+		return view('articles.index')->with([
+			'articles' => $articles,
+			'category' => 'All',
+
+		]);
 	}
 
 

@@ -6,7 +6,8 @@ class Category extends Model {
 
 	protected $fillable = array(
 		'name',
-		'type'
+		'type',
+		'slug'
 	);
 
 	public function parentCategories()

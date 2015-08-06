@@ -29,8 +29,6 @@
 
 			@include('partials/nav2')
 
-			@include('partials/nav')
-
 
 			<div class="container">
 				<div class="content">

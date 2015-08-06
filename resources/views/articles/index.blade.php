@@ -2,7 +2,8 @@
 
 @section('content')
 
-	<h2>Articles</h2>
+	
+	<h2>{{ $category }} Articles</h2>
 
 	<hr/>
 

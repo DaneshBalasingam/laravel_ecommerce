@@ -6,55 +6,91 @@
 	margin-left: 20px;
 
 }
-
-#top-nav {
-	width: 100%;
-}
-
-#search_box {
-	float: right;
-	
-	margin-right: 40px;
-	margin-top: 10px;
-}
-
-#menu {
-	float: left;
-	margin-left: 20px;
-	
-}
-
 .main-navigation {
+    position: relative;
     width: 100%;
     display: block;
+    clear: both;
     font-family: 'Lato', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #29293D;
     text-transform: uppercase;
-    background: #E6E6FA;
+    background: #313131;
     
-
 }
-
-
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
-	padding-left: 10px;
-	border: none;
+	padding-left: 0;
 }
-
-.main-navigation ul li {
-	display: inline-block;
-	padding: 10px 20px;
-	
+.main-navigation li {
+	float: left;
+	position: relative;
 }
-
 .main-navigation a {
-	text-decoration: none;
-
+    display: block;
+    padding: 1.3em 1em;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1.3em;
+    color: white;
+   
 }
+.main-navigation ul ul {
+    position: absolute;
+    left: 0;
+    z-index: 99999;
+    display: none;
+    float: left;
+    padding: 0;
+    background: #4d4d4d;
+   
+}
+.main-navigation ul ul ul {
+	left: 100%;
+	top: 0;
+}
+.main-navigation ul ul a {
+	
+	width: 200px;
+	color: white;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+    color: white;    
+    background: #4d4d4d;
+   
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+    background: #313131;
+}
+.main-navigation ul li:hover > ul {
+	display: block;
+}
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a:hover,
+.main-navigation .current-menu-item > a:hover {
+    
+    color: green;
+    
+}
+
+.main-navigation .current_page_ancestor {
+    background: #4d4d4d;
+    
+}
+
+.main-navigation ul ul .current_page_parent,
+.main-navigation .current_page_parent .current_page_item > a {
+    color: white;
+    color: hsl(0, 0%, 100%);
+    background: #313131;
+    background: hsl(0, 0%, 19%);
+} 
 
 
 /* 
@@ -63,6 +99,29 @@
 
 #mobile-top-nav {
 	display: none;
+}
+
+#top-nav {
+
+}
+
+#search_box {
+	color: white;
+	margin-right: 20px;
+	margin-top: 10px;
+	float: right;
+}
+
+.search-field {
+	border-radius: 15px;
+	width: 180px;
+    border: 1px #000 solid;
+    padding-left: 10px;
+}
+
+#menu {
+	display: block;
+	float: left;
 }
 
 .mobile-menu-toggle {
@@ -120,16 +179,6 @@
 
 @media screen and (max-width: 768px) {
 
-	#primary-menu {
-		margin-left: 0px;
-		padding-left: 0px;
-	}
-
-	.main-navigation li {
-		display: block;
-		padding: 10px 0px !important;
-	}
-
 	#search_box {
 		display: none;
 	}
@@ -141,58 +190,41 @@
 		z-index: 100;
 	}
 
-	.main-navigation ul li {
-
-		display: block;
+	.mobile-nav-widget {
+		
 	}
-	.main-navigation ul {
-
-
-
-		height: auto;
-
-	}
-
-
-	.main-navigation li a { 
-		padding: 1.3em 2em; 
-	}
-
 
 	#mobile-top-nav {
 
 		margin-top: 5px;
-		display:-webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-justify-content: space-between;
-		-ms-flex-pack: justify;
-		justify-content: space-between;
+		display: block;
 	}
 
+	#mobile-top-nav-left {
+        float: left;
+
+	}
 
 	#mobile-top-nav-right {
+		float: right;
 		margin-right: 20px;
 		margin-top: 2px;
-		display:-webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
 	}
 
 	.mobile-search-toggle {
-		display: block;
+		display: inline-block;
 		margin-right: 15px;
 
 	}
 
 
 	.mobile-cart-toggle {
-		display: block;
+		display: inline-block;
 
 	}
 
 	.mobile-user-toggle {
-		display: block;
+		display: inline-block;
 		margin-right: 15px;
 	}
 
@@ -204,7 +236,6 @@
 
 	#menu {
 		display: none;
-		width: 100%;
 	}
 
 	#user {
@@ -218,6 +249,56 @@
 	#mobile_search {
 		display: none;
 	}
+    .main-navigation li { 
+		float: none; 
+	}
 
- 
+	.main-navigation li a { 
+		padding: 1.3em 2em; 
+	}
+
+	.main-navigation li li a { 
+		padding-left: 4em; 
+	}
+
+	.main-navigation li li li a { 
+		padding-left: 6em; 
+	}
+
+	.main-navigation li:hover > a {
+		background: #313131;
+	}
+
+	.main-navigation ul ul,
+	.main-navigation ul ul ul {
+		position: relative;
+		top: inherit;
+		left: 0;
+		display: none;
+		float: none;
+		background: #313131;
+	}
+	
+	.main-navigation ul ul a { width: 100%; }
+
+	.main-navigation ul a:hover,
+	.main-navigation ul ul a:hover {
+		background: #4d4d4d;
+	}
+
+	.main-navigation .current_page_ancestor { background: inherit; }
+
+	.main-navigation ul ul .current_page_parent {
+		color: inherit;
+		background: inherit;
+	}
+
+	.main-navigation .current_page_item > a,
+	.main-navigation .current_page_item > a:hover,
+	.main-navigation .current_page_item li:hover,
+	.main-navigation .current_page_parent .current_page_item > a  {
+		color: #fff;
+		color: hsl(0, 0%, 100%);
+		background: #4d4d4d;   
+	}
 }

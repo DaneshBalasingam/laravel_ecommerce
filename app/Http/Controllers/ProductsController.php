@@ -32,7 +32,10 @@ class ProductsController extends Controller {
 
 		$products->setPath('products');
 
-		return view('products.index')->with('products',$products);
+		return view('products.index')->with([
+			'products' => $products,
+			'category' => 'All',
+		]);
 	}
 
 	/**

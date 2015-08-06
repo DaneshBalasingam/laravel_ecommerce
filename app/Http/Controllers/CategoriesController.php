@@ -39,6 +39,8 @@ class CategoriesController extends Controller {
 
 		$input = Request::all();
 		$parent = $input['parent'];
+
+		$input['slug'] = $input['name'] . '-' . $input['type'];
 		
 		$input['created_at'] = Carbon::now();
 		$category = Category::create($input);
@@ -57,12 +59,27 @@ class CategoriesController extends Controller {
 
 	public function show(Category $category) {
 
+		if ( $category->type == "article") {
+			$articles = $category->articles()->published()->paginate(6);
 
-		$articles = $category->articles()->published()->paginate(2);
+			$articles->setPath('articles');
 
-		$articles->setPath('articles');
+			return view('articles.index')->with([
+				'articles' => $articles, 
+				'category' => $category->name
+			]);
+		} else {
 
-		return view('articles.index')->with('articles',$articles);
+			$products = $category->products()->published()->paginate(6);
+
+			$products->setPath('products');
+
+			return view('products.index')->with([
+				'products' => $products,
+				'category' => $category->name
+			]);
+
+		}
 	}
 
 	public function update() {

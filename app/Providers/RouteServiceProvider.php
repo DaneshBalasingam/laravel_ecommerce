@@ -48,6 +48,10 @@ class RouteServiceProvider extends ServiceProvider {
 			return \App\Product::where('slug', $slug)->firstOrFail();
 		});
 
+		$router->bind('categories', function($slug){
+			return \App\Category::where('slug', $slug)->firstOrFail();
+		});
+
 
 	}
 
