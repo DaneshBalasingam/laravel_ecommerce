@@ -9,6 +9,7 @@ use Carbon\Carbon;
 //use Illuminate\Http\Request;
 use Request;
 
+
 class CategoriesController extends Controller {
 
 	public function __construct() {
@@ -20,6 +21,10 @@ class CategoriesController extends Controller {
 
 	public function index() {
 
+		$categories = Category::all();
+
+		return view('categories.index')->with('categories',$categories);
+		
 	}
 
 	public function create() {
@@ -52,7 +57,7 @@ class CategoriesController extends Controller {
 		
 
 		flash()->success('New category has been created');
-		return redirect('admin');
+		return redirect('categories');
 
 
 	}
@@ -80,6 +85,12 @@ class CategoriesController extends Controller {
 			]);
 
 		}
+	}
+
+	public function edit(Category $category) {
+
+		return view('categories.edit')->with('category', $category);
+
 	}
 
 	public function update() {

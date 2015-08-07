@@ -72,17 +72,15 @@ class PicturesController extends Controller {
 			
 			$img = Image::make($request->file('image')->getRealPath());
 
-			$img->resize(600,null, function ($constraint) { $constraint->aspectRatio(); })
-			    ->save($path . $filename)
-			    ->crop(150, 150)
-			    ->save($path. 'thumbnail-'. $filename);
+			$img->save($path . 'original-' . $filename)
+			    ->resize(180,null, function ($constraint) { $constraint->aspectRatio(); })
+			    ->save($path. 'thumbnail-'. $filename)
+			    ->resize(80,null, function ($constraint) { $constraint->aspectRatio(); })
+			    ->save($path. 'small-'. $filename);
 		}
 
 		return $newPic->id;
 
-		//return "hi";
-		//return redirect('pictures/create');
-		//return redirect('pictures');
 	}
 
 	/**

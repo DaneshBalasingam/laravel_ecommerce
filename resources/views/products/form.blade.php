@@ -72,10 +72,12 @@
 	@unless ($categories->isEmpty())
 		<?php $cat_index = 0; ?>
 		@foreach ($categories as $category)
-		    <div class="category_form_item">
-				<input type="checkbox" name="category[<?php echo $cat_index ?>]" value="{{ $category->id }}">{{ $category->name }}<br>
-			</div>
-			<?php $cat_index++; ?>
+			@if ( $category->type == 'product' )
+			    <div class="category_form_item">
+					<input type="checkbox" name="category[<?php echo $cat_index ?>]" value="{{ $category->id }}">{{ $category->name }}<br>
+				</div>
+				<?php $cat_index++; ?>
+			@endif
 		@endforeach
 
 	@endunless

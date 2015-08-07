@@ -31,8 +31,8 @@
 	</p>
 
 	<p>
-		<a href="{{ url('/categories/create') }}">
-			Add Category
+		<a href="{{ url('/categories/') }}">
+			Manage Category
 		</a>
 	</p>
 
