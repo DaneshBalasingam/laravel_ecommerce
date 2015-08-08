@@ -7462,4 +7462,38 @@ h1.site-title a:hover {
 		background: #4d4d4d;   
 	}
 }
+#product-picture {
+
+	text-align: center;
+	min-height: 520px;	
+
+}
+
+#product-gallery {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#product-gallery img {
+	cursor: pointer;
+}
+
+.product_summary h2 {
+	text-align: center;
+}
+
+.product_summary_update {
+	float: left;
+	font-size: 22px;
+	width: 50%;
+	text-align: center;
+
+}
+
+.product_summary_delete {
+	font-size: 22px;
+	float: left;
+	width: 50%;
+	text-align: center;
+}
 /*# sourceMappingURL=all.css.map */

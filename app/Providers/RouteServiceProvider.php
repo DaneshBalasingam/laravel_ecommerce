@@ -24,6 +24,8 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
+		view()->share('categories', \App\Category::all());
+
 		//$router->model('articles', '\App\Article');
 
 		$router->bind('articles', function($slug){

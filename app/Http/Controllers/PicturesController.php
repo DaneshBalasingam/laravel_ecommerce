@@ -72,10 +72,14 @@ class PicturesController extends Controller {
 			
 			$img = Image::make($request->file('image')->getRealPath());
 
-			$img->save($path . 'original-' . $filename)
-			    ->resize(180,null, function ($constraint) { $constraint->aspectRatio(); })
+			$img->resize(400,null, function ($constraint) { $constraint->aspectRatio(); })
+				->resize(null,500, function ($constraint) { $constraint->aspectRatio(); })
+				->save($path . 'large-' . $filename)
+			    ->resize(200,null, function ($constraint) { $constraint->aspectRatio(); })
+			    ->resize(null,300, function ($constraint) { $constraint->aspectRatio(); })
 			    ->save($path. 'thumbnail-'. $filename)
 			    ->resize(80,null, function ($constraint) { $constraint->aspectRatio(); })
+			    ->crop(80,80)
 			    ->save($path. 'small-'. $filename);
 		}
 

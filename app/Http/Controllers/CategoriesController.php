@@ -93,15 +93,41 @@ class CategoriesController extends Controller {
 
 	}
 
-	public function update() {
+	public function update(Category $category) {
+
+
+		$input = Request::all();
+		$parent = $input['parent'];
+
+		$input['slug'] = $input['name'] . '-' . $input['type'];
+		
+		
+		$category->update($input);
+		
+		if ( $parent != "none" ) {
+			$parent_array = [$parent];
+			$category->parentCategories()->sync($parent_array);
+		}
+		
+
+		flash()->success('Category has been updated');
+		return redirect('categories');
 
 
 
 	}
 
-	private function syncCategory () {
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  Category  $category
+	 * @return Response
+	 */
+	public function destroy(Category $category)
+	{
+		$category->delete();
 
-
+		return redirect('categories'); 
 	}
 
 }

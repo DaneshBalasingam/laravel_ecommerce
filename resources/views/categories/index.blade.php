@@ -16,6 +16,7 @@
 			<tr>
 				<th>Category Id</th>
 				<th>Category Name</th>
+				<th>Parent</th>
 				<th>Category Type</th>
 				<th></th>
 				<th></th>
@@ -26,6 +27,11 @@
 				<tr>
 					<td>{{ $category->id}}</td>
 					<td>{{ $category->name}}</td>
+					<td>
+						@if( !$category->parentCategories->isEmpty())
+							{{ $category->parentCategories[0]->name }}
+						@endif
+					</td>
 					<td>{{ $category->type}}</td>
 					<td>
 						<a class='btn btn-danger' href="{{ url('/categories/' . $category->slug . '/edit') }}">

@@ -30,7 +30,7 @@ class GalleriesController extends Controller {
 	public function store(Requests\CreatePictureRequest $request)
 	{
 
-		if ($file = $request->file('image'))
+		/*if ($file = $request->file('image'))
 		{
 
 
@@ -52,7 +52,7 @@ class GalleriesController extends Controller {
 			    ->save($path . $filename)
 			    ->crop(150, 150)
 			    ->save($path. 'thumbnail-'. $filename);
-		}
+		}*/
 
 		//return redirect('galleries/create');
 	}

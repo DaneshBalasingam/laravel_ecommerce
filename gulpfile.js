@@ -25,7 +25,8 @@ elixir(function(mix) {
         'libs/jquery.Jcrop.css',
         'custom.css',
         'header.css',
-        'nav.css'
+        'nav.css',
+        'products.css'
         
 
 	]);
@@ -41,6 +42,7 @@ elixir(function(mix) {
         'cart.js',
         'navigation.js',
         'lightbox.js',
+        'gallery.js',
         'custom.js'
 
     ]);
