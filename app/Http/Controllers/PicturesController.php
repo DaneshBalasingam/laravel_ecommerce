@@ -43,7 +43,7 @@ class PicturesController extends Controller {
 	 */
 	public function create()
 	{
-		$pictures = Picture::all();
+		$pictures = Picture::latest()->get();
 		return view('pictures.create')->with('pictures',$pictures);
 	}
 
@@ -72,8 +72,8 @@ class PicturesController extends Controller {
 			
 			$img = Image::make($request->file('image')->getRealPath());
 
-			$img->resize(400,null, function ($constraint) { $constraint->aspectRatio(); })
-				->resize(null,500, function ($constraint) { $constraint->aspectRatio(); })
+			$img->resize(null,500, function ($constraint) { $constraint->aspectRatio(); })
+				->resize(400,null, function ($constraint) { $constraint->aspectRatio(); })
 				->save($path . 'large-' . $filename)
 			    ->resize(200,null, function ($constraint) { $constraint->aspectRatio(); })
 			    ->resize(null,300, function ($constraint) { $constraint->aspectRatio(); })

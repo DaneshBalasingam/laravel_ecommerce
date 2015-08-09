@@ -26,7 +26,9 @@ elixir(function(mix) {
         'custom.css',
         'header.css',
         'nav.css',
-        'products.css'
+        'products.css',
+        'tags.css',
+        'cart.css'
         
 
 	]);

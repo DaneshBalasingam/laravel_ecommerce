@@ -132,26 +132,9 @@ article form styling
 	padding: 20px;
 }
 
-/* 
-article index page
-*/
 
-/*
-Cart
-*/
 
-#cart_toggle {
-	cursor: pointer;
 
-}
-
-#cart_display {
-	display: none;
-	position: absolute;
-	right: 20px;
-	top: 60px;
-	z-index: 10;
-}
 
 
 

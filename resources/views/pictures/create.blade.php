@@ -29,7 +29,7 @@
 		    @foreach ($pictures as $picture)
 		    	   
 		    	<img class="image" data-filename="{{$picture->filename}}" 
-		    	     src="{{ asset('/images/uploads/thumbnail-' . $picture->filename) }}">
+		    	     src="{{ asset('/images/uploads/small-' . $picture->filename) }}">
 
 
 		    @endforeach

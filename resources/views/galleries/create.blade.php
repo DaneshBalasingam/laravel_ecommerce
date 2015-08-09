@@ -25,7 +25,7 @@
 
 	    		@foreach ($pictures as $picture)
 
-	    			<option data-img-src="{{ asset('/images/uploads/thumbnail-' . $picture->filename) }}"
+	    			<option data-img-src="{{ asset('/images/uploads/small-' . $picture->filename) }}"
 	    					id="{{$picture->id}}"
 	    			     	value="{{$picture->id}}">{{$picture->filename}}</option>
 

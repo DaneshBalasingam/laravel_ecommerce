@@ -28,7 +28,7 @@ class ProductsController extends Controller {
 	 */
 	public function index()
 	{
-		$products = Product::latest('published_at')->published()->paginate(2);
+		$products = Product::latest('published_at')->published()->paginate(6);
 
 		$products->setPath('products');
 

@@ -1,0 +1,10 @@
+.tag_product_picture{
+	float: left;
+	width: 30%;
+}
+
+.tag_product_info {
+	float: left;
+	width: 70%;
+
+}

@@ -40,7 +40,7 @@
 
 		    		@foreach ($product_pictures as $picture)
 
-		    			<td>{{ $picture->filename }}</td>
+		    			<td><img class="cart-pic" src="{{ asset('/images/uploads/small-' . $picture->filename) }}"></td>
 
 		    		@endforeach
 

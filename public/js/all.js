@@ -11003,6 +11003,8 @@ $("document").ready(function() {
 
 	gallery();
 
+	$('.product_thumb_wrap:nth-child(3n)').after('<div class="clearfix visible-lg visible-md"></div>');
+
 	
 
 	//loadFeaturedLightbox();
@@ -11010,11 +11012,6 @@ $("document").ready(function() {
 	//loadGalleryLightbox();
 
 	//loadEditLightbox();
-
-	/*$('#open_add_image').click(function() {
-
-  		$( "#add_image_section" ).toggle( "slow" );
-	});*/
 
 
 });

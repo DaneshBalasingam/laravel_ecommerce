@@ -38,10 +38,18 @@
 		</div>
 
 		<div  class="col-md-6">
-			<div>
+			<div id="product_body">
 
 				{{ $product->body }}
 
+			</div>
+
+			<div id="product_price">
+				<p>PRICE : NZD${{  $product->price }}</p>
+			</div>
+
+			<div id="product_stock">
+				<p>STOCK : {{ $product->stock }}</p>
 			</div>
 
 			<div id="add-to-cart">		
@@ -57,34 +65,25 @@
 
 					<div class="form-group">
 						<label>Quantity</label>
-						<input class="form-control" name="quantity" type="number" value="1" >
+						<input class="form-control product_qty" name="quantity" type="number" value="1" >
 					</div>
 
 					<button class="btn btn-primary">Add to Cart</button>
 				{!!  Form::close() !!}
 			</div>
 
-		    @unless ($product->tags->isEmpty())
-				<h5>Tags: </h5>
+			<div id="product_meta">
+			    @unless ($product->tags->isEmpty())
+					<p>
+						<span class="product_meta_head">Tags :</span>
+						@foreach ($product->tags as $tag)
+						   <a  href="{{ url('/tags', $tag->name) }}"> {{ $tag->name }} </a> 
+						@endforeach
+					</p>	
 
-				<p>
-					@foreach ($product->tags as $tag)
-					   <a  href="{{ url('/tags', $tag->name) }}"> {{ $tag->name }} </a> ,
-					@endforeach
-				</p>	
+				@endunless
 
-			@endunless
-
-			@unless ($product->categories->isEmpty())
-				<h5>Categories: </h5>
-
-				<p>
-					@foreach ($product->categories as $category)
-					   <a  href="{{ url('/categories', $category->name) }}"> {{ $category->name }} </a> ,
-					@endforeach
-				</p>	
-
-			@endunless
+			</div>
 
 		</div>
 

@@ -75,22 +75,7 @@ h1.site-title a:hover {
 	padding-right: 30px;
 }
 
-#cart_toggle {
-	float: left;
-	margin-left: 50px;
-	margin-right: 15px;
-	cursor: pointer;
-}
 
-#cart {
-	position: absolute;
-	z-index: 200;
-	top: 40px;
-	right: 10px;
-	padding: 10px;
-	font-size: 16px;
-	color: #0F0F0A;
-}
 
 .search-field {
 	border-radius: 15px;

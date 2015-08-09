@@ -16,7 +16,7 @@ class GalleriesController extends Controller {
 	public function create()
 	{
 
-		$pictures = Picture::all();
+		$pictures = Picture::latest()->get();
 		return view('galleries.create')->with('pictures',$pictures);
 
 	}

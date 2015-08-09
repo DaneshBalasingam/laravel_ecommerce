@@ -12,11 +12,15 @@ class TagsController extends Controller {
 
 	public function show(Tag $tag) {
 
-		$articles = $tag->articles()->published()->paginate(2);
+		$products = $tag->products()->latest('published_at')->published();
 
-		$articles->setPath('articles');
+		$articles = $tag->articles()->latest('published_at')->published();
 
-		return view('articles.index')->with('articles',$articles);
+		return view('tags.show')->with([
+			'articles' => $articles,
+			'products' => $products,
+			'tag' => $tag
+		]);
 	}
 
 
