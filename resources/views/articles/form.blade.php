@@ -19,7 +19,7 @@
 </div>
 <div class="form-group">
 	{!! Form::label('body', 'Body:') !!}
-	{!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+	{!! Form::textarea('body', null, ['class' => 'form-control', 'id' => 'article_textarea' ]) !!}
 </div>
 
 <div class="form-group">

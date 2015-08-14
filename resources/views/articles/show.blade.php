@@ -7,13 +7,13 @@
 
 	<hr/>
 
-	<div>
+	<div class="article_image">
 
 		@unless ($article->pictures->isEmpty())
 
 			@foreach ($article->pictures as $picture)
 
-                <img src="{{ asset('/images/uploads/' . $picture->filename) }}">
+                <img src="{{ asset('/images/uploads/large-' . $picture->filename) }}">
 
 			@endforeach
 

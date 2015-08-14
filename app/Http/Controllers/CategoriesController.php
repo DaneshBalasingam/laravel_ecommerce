@@ -67,7 +67,7 @@ class CategoriesController extends Controller {
 		if ( $category->type == "article") {
 			$articles = $category->articles()->published()->paginate(6);
 
-			$articles->setPath('articles');
+			$articles->setPath($category->slug);
 
 			return view('articles.index')->with([
 				'articles' => $articles, 
@@ -77,7 +77,7 @@ class CategoriesController extends Controller {
 
 			$products = $category->products()->published()->paginate(6);
 
-			$products->setPath('products');
+			$products->setPath($category->slug);
 
 			return view('products.index')->with([
 				'products' => $products,

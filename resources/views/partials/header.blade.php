@@ -3,17 +3,17 @@
 	
 	<div id="site-logo" class="clearfix">
 		<div id="logo-img">
-			 LOGO
+			 <img src="{{ asset('/images/luthier_logo.jpg') }}">
 		     
 		</div>
 		<div id="logo-text">
 			<p id="logo-head">
 				<h1 class="site-title">
-					<a href="{{ url('/') }}" rel="home">SITE TITLE</a>
+					<a href="{{ url('/') }}" rel="home">SYNDICATED LUTHIERS</a>
 				</h1>
 			</p>
 			<p id="logo-caption">
-				<p class="site-description">Company tag goes here</p>
+				<p class="site-description">"We string notes together"</p>
 			</p>
 		</div>
 

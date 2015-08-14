@@ -1,0 +1,43 @@
+.article_image {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.article_thumb_picture{
+	float: left;
+	width: 30%;
+}
+
+.article_thumb_info {
+	float: left;
+	width: 70%;
+
+}
+
+.article_thumb_info h2 {
+	 margin-top: 0px;
+}
+
+.article_thumb_update {
+	float: left;
+	width: 45%;
+}
+
+.article_thumb_delete {
+	float: left;
+	width: 45%;
+}
+
+.article_admin {
+	width: 80%;
+	margin: 20px auto;
+	
+}
+
+.article_admin a {
+	font-size: 20px;
+}
+
+.admin_delete {
+	font-size: 20px;
+}

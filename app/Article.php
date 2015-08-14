@@ -5,7 +5,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class Article extends Model {
+class Article extends Publishable {
 
 		use SoftDeletes;
 
@@ -34,7 +34,6 @@ class Article extends Model {
 		public function setPublishedAtAttribute($date) {
 
 			$this->attributes['published_at'] = carbon::CreateFromFormat('Y-m-d', $date);
-			//$this->attributes['published_at'] = carbon::parse($date);
 
 		}
 
@@ -48,7 +47,6 @@ class Article extends Model {
 
 		public function gallery(){
 
-			//return $this->hasOne('App\Gallery');
 			return $this->morphMany('App\Gallery', 'galleryable');
 
 		}
@@ -58,7 +56,6 @@ class Article extends Model {
 		public function pictures(){
 
 			return $this->belongsToMany('App\Picture')->withTimestamps();
-			//return $this->belongsTo('App\Picture');
 
 		}
 

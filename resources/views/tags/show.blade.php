@@ -6,16 +6,20 @@
 
 	<hr/>
 
-			@foreach ($products as $product)
+			@foreach ($publishables as $publishable)
 
 				<div class="tag_product clearfix">
 
-					@unless ($product->pictures->isEmpty())
+					@unless ($publishable->pictures->isEmpty())
 						<div class="tag_product_picture">
 
-							@foreach ($product->pictures as $picture)
-								
-								<a href="{{ url('/products',$product->slug) }}">
+							@foreach ($publishable->pictures as $picture)
+
+								@if (  get_class($publishable) == 'App\Product') 
+									<a href="{{ url('/products',$publishable->slug) }}">
+								@elseif (  get_class($publishable) == 'App\Article')
+									<a href="{{ url('/articles',$publishable->slug) }}">
+								@endif
 		                        	<img class="img-responsive" src="{{ asset('/images/uploads/small-' . $picture->filename) }}">
 		                    	</a>
 			                    
@@ -27,8 +31,12 @@
 					<div class="tag_product_info">
 
 						<h2>
-			                <a href="{{ url('/products',$product->slug) }}">
-								{{ $product->title }}
+							@if (  get_class($publishable) == 'App\Product') 
+			                	<a href="{{ url('/products',$publishable->slug) }}">
+			                @elseif (  get_class($publishable) == 'App\Article')
+								<a href="{{ url('/articles',$publishable->slug) }}">
+							@endif
+								{{ $publishable->title }}
 							</a>
 						</h2>
 
@@ -36,15 +44,15 @@
 
 						<div class="tag_product_excerpt">
 
-							{{ $product->excerpt }}
+							{{ $publishable->excerpt }}
 
 						</div>
 					</div>
 					
 				</div>
 
+				<hr/>
 			@endforeach
-
 
 @stop
 

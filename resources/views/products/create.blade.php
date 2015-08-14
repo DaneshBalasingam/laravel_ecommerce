@@ -1,12 +1,10 @@
 @extends('app')
 
-@include('pictures.lightboxImage')
-
-@include('galleries.lightboxGallery')
-
-
-
 @section('content')
+
+	@include('pictures.lightboxImage')
+
+	@include('galleries.lightboxGallery')
 
 	<h2>Add a Product</h2>
 

@@ -10,13 +10,13 @@ class Tag extends Model {
 
 	public function articles(){
 
-		return $this->belongsToMany('App\Article');
+		return $this->belongsToMany('App\Article')->latest('published_at')->published();
 
 	}
 
 	public function products(){
 
-		return $this->belongsToMany('App\Product');
+		return $this->belongsToMany('App\Product')->latest('published_at')->published();
 
 	}
 
@@ -27,7 +27,7 @@ class Tag extends Model {
 			if ( !Tag::where('id', $tag)->first()){
 				
 
-					$tag_array = [ 'name' => $tag ];
+					$tag_array = ['name' => $tag ];
 
 					$newTag = Tag::create($tag_array);
 

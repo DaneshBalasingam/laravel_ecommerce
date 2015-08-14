@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model {
+class Product extends Publishable {
 
 	use SoftDeletes;
 

@@ -6,10 +6,6 @@
 
 	<hr/>
 
-	
-
-	
-
 		<div class="row">
 
 			@foreach ($products->getCollection()->all() as $product)

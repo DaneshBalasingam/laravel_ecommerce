@@ -6,19 +6,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Tag;
+use App\Product;
+use App\Publishable;
 use App\Article;
+use Carbon\Carbon;
 
 class TagsController extends Controller {
 
 	public function show(Tag $tag) {
 
-		$products = $tag->products()->latest('published_at')->published();
-
-		$articles = $tag->articles()->latest('published_at')->published();
+		$publishables = Publishable::searchByTag($tag);
 
 		return view('tags.show')->with([
-			'articles' => $articles,
-			'products' => $products,
+			'publishables' => $publishables,
 			'tag' => $tag
 		]);
 	}
