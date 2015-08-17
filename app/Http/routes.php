@@ -16,8 +16,8 @@
 Route::get('about', 'PagesController@showAbout');
 Route::get('contact', 'PagesController@showContact');
 Route::get('admin', 'PagesController@showAdmin');
-Route::get('/', 'PagesController@showAbout');
-Route::get('/home', 'PagesController@showAbout');
+Route::get('/', 'PagesController@showHome');
+Route::get('/home', 'PagesController@showHome');
 
 /*Route::post('carts/{id}', function ($id) {
     return 'Cart '.$id;
@@ -45,6 +45,10 @@ Route::resource('products','ProductsController');
 Route::resource('carts','CartsController');
 
 Route::resource('orders','OrdersController');
+
+Route::resource('banners','BannersController');
+
+Route::resource('users','UsersController');
 
 
 Route::controllers([

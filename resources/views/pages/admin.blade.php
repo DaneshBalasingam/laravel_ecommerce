@@ -13,6 +13,12 @@
 	</p>
 
 	<p>
+        <a href="{{ url('/users/') }}">
+			Manage User
+		</a>
+	</p>
+
+	<p>
 		<a href="{{ url('/articles/create') }}">
 			Add Article
 		</a>
@@ -25,8 +31,8 @@
 	</p>
 
 	<p>
-		<a href="{{ url('/pictures/create') }}">
-			Add Image
+		<a href="{{ url('/banners/') }}">
+			Manage Banner
 		</a>
 	</p>
 

@@ -50,17 +50,6 @@
 
 	@endunless
 
-	 @unless ($article->categories->isEmpty())
-		<h5>Categories: </h5>
-
-		<p>
-			@foreach ($article->categories as $category)
-			   <a  href="{{ url('/categories', $category->name) }}"> {{ $category->name }} </a> ,
-			@endforeach
-		</p>	
-
-	@endunless
-
 
 
 @stop

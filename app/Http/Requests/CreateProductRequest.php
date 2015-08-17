@@ -28,7 +28,7 @@ class CreateProductRequest extends Request {
 		return [
 
 			'title' => 'required|min:3',
-			'excerpt' => 'required|max:100',
+			'excerpt' => 'required|max:200',
 			'body' => 'required',
 			'published_at' => 'required|date',
 			'slug' => 'required|alpha_dash|unique:articles',

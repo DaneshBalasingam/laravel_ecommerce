@@ -10966,7 +10966,6 @@ function Imagelightbox () {
 
 
 	}
-	
 
 
 }
@@ -11015,13 +11014,7 @@ $("document").ready(function() {
 
 	$('.product_thumb_wrap:nth-child(3n)').after('<div class="clearfix visible-lg visible-md"></div>');
 
-	
-
-	//loadFeaturedLightbox();
-
-	//loadGalleryLightbox();
-
-	//loadEditLightbox();
+	$('#slide_box :nth-child(1)').addClass("active");
 
 
 });

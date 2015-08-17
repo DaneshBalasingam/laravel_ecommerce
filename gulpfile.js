@@ -24,12 +24,14 @@ elixir(function(mix) {
         'libs/image-picker.css',
         'libs/jquery.Jcrop.css',
         'custom.css',
+        'lightbox.css',
         'header.css',
         'nav.css',
         'products.css',
         'articles.css',
         'tags.css',
-        'cart.css'
+        'cart.css',
+        'slider.css'
         
 
 	]);

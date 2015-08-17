@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Banner;
 
 class PagesController extends Controller {
 
@@ -16,29 +17,22 @@ class PagesController extends Controller {
 
 	public function showAbout()
 	{
-		$data = [];
 
-		$data['first'] = 'Danesh';
-		$data['last'] = 'Balasingam';
-
-        $data['people'] =[];
-        
-		$data['people'] = [
-
-			'Steely Dan', 
-			'Herbie Hancock', 
-			'Chick Corea',
-			'Howard Alden',
-			'Steve Vai'
-
-		];
-
-		return view('pages/about', $data);
+		return view('pages/about');
 	}
 
 	public function showContact()
 	{
 		return view('pages/contact');
+	}
+
+	public function showHome()
+	{
+		$banners = Banner::all();
+		
+		return view('pages/home')->with([
+			'banners' => $banners
+		]);
 	}
 
 	public function showAdmin()

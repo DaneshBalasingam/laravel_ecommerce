@@ -1,0 +1,83 @@
+/****************
+
+	Slider stylings
+
+*********/
+
+#slide_box {
+	margin-top: 30px;
+}
+
+.item {
+	position: relative;
+}
+
+.carousel-caption {
+	position: absolute;
+	top: 10%;
+	left: 15%;
+	padding: 20px;
+	width: 35%;
+	min-width: 350px;
+	max-height: 270px;
+	background-color: rgba(51, 119, 74, 0.5);
+
+}
+
+.slider_title {
+	padding-bottom: 10px;
+	font-weight: bold;
+	color: #A52A2A;
+}
+
+.slider_excerpt {
+	margin-bottom: 30px;
+}
+
+.slider_link {
+	background-color: #1E90FF;
+	padding: 5px;
+	color: white;
+}
+
+@media screen and (max-width: 650px) {
+
+	.item {
+
+	}
+
+	.carousel-caption {
+		padding-top: 10px;
+		font-size: 14px;
+		width: 100%;
+		left: 0;
+		top: 0;
+		height: 100vh;
+	} 
+
+
+	.slider_title {
+		font-size: 14px;
+		padding-top: 10%;
+		margin-bottom: 0px;
+	}
+
+	.slider_excerpt {
+		width: 80%;
+		margin: 0 auto;
+		margin-bottom: 10px;
+		
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+		.slider_title {
+
+		padding-top: 0;
+
+	}
+
+}
+

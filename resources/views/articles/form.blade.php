@@ -33,18 +33,18 @@
 </div>
 
 
-<div>
-	<div id="set_featured_image">Add Featured Image</div>
+<div id="featured_image_form_section">
+	<div id="set_featured_image">Set Main Image</div>
 
 	<a href="#">
 		<img id="featured_thumbnail" data-url = "{{ asset('/images/uploads/thumbnail-')}}" 
-		                             src="{{ asset('/images/uploads/thumbnail-blank.jpg')}}" >
+		                             src="{{ asset('/images/no-image.jpg')}}" >
 	</a>
 
 	<input name="featured_image" type="hidden" value="" id="featured_image">
 </div>
 
-<div>
+<div id="gallery_form_section">
 	<div id="set_gallery">Add Gallery</div>
 
 	<select id="gallery_form" name="gallery[]" multiple="multiple">

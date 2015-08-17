@@ -32,10 +32,6 @@ class RouteServiceProvider extends ServiceProvider {
 			return \App\Article::where('slug', $slug)->firstOrFail();
 		});
 
-		/*$router->bind('categories', function($name){
-			return \App\Category::where('name', $name)->firstOrFail();
-		});*/
-
 		//$router->model('tags', '\App\Tag');
 
 		$router->bind('tags', function($name){
@@ -54,6 +50,9 @@ class RouteServiceProvider extends ServiceProvider {
 			return \App\Category::where('slug', $slug)->firstOrFail();
 		});
 
+		$router->bind('users', function($id){
+			return \App\User::where('id', $id)->firstOrFail();
+		});
 
 	}
 

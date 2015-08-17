@@ -1,12 +1,14 @@
 #product-picture {
 
 	text-align: center;
-	min-height: 520px;	
+	min-height: 520px;
+	overflow: hidden;	
 
 }
 
 #product-gallery {
 	text-align: center;
+	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
