@@ -48,7 +48,8 @@ elixir(function(mix) {
         'navigation.js',
         'lightbox.js',
         'gallery.js',
-        'custom.js'
+        'custom.js',
+        'products.js'
 
     ]);
 

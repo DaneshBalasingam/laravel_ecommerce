@@ -13,13 +13,21 @@ use Carbon\Carbon;
 
 class TagsController extends Controller {
 
-	public function show(Tag $tag) {
+	public function show($tagName) {
 
-		$publishables = Publishable::searchByTag($tag);
+		$tag = \App\Tag::where('name', $tagName)->first();
+
+		if ( $tag ) {
+			$publishables = Publishable::searchByTag($tag);
+		} else {
+			$publishables = collect([]);
+		}
+
+		
 
 		return view('tags.show')->with([
 			'publishables' => $publishables,
-			'tag' => $tag
+			'tagName' => $tagName
 		]);
 	}
 

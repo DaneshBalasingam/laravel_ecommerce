@@ -48,6 +48,72 @@
 	 
 	</div>
 
+	<div id="home_promotion_thumbs" class="row">
+
+		<div class="home_thumb_wrap col-lg-3 col-md-6  col-xs-12">
+
+			<div class="home_thumb thumbnail">
+				<h2>
+	                <a href="{{ url('/tags', 'specials') }}">
+						Specials
+					</a>
+				</h2>
+				<div>
+					<a href="{{ url('/tags', 'specials') }}">
+						<img src="{{ asset('/images/specials.jpg')}}" alt="special items">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="home_thumb_wrap col-lg-3 col-md-6  col-xs-12">
+			<div class="home_thumb thumbnail">
+				<h2>
+	                <a href="{{ url('/tags', 'new') }}">
+						New
+					</a>
+				</h2>
+				<div>
+					<a href="{{ url('/tags', 'new') }}">
+						<img src="{{ asset('/images/new.jpg')}}" alt="new items">
+					</a>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="home_thumb_wrap col-lg-3 col-md-6  col-xs-12">
+			<div class="home_thumb thumbnail">
+				<h2>
+	                <a href="{{ url('/tags', 'popular') }}">
+						Popular
+					</a>
+				</h2>
+				<div>
+					<a href="{{ url('/tags', 'popular') }}">
+						<img src="{{ asset('/images/popular.jpg')}}" alt="popular items">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="home_thumb_wrap col-lg-3 col-md-6  col-xs-12">
+			<div class="home_thumb thumbnail">
+				<h2>
+	                <a href="{{ url('/tags', 'clearance') }}">
+						Clearance
+					</a>
+				</h2>
+				<div>
+					<a href="{{ url('/tags', 'clearance') }}">
+						<img src="{{ asset('/images/clearance.jpg')}}" alt="clearance items">
+					</a>
+				</div>
+			</div>
+		</div>
+
+	<div>
+
 
 
 

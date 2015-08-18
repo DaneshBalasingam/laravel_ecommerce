@@ -31,7 +31,8 @@ $("document").ready(function() {
 
 	gallery();
 
-	$('.product_thumb_wrap:nth-child(3n)').after('<div class="clearfix visible-lg visible-md"></div>');
+	products();
+
 
 	$('#slide_box :nth-child(1)').addClass("active");
 

@@ -2,12 +2,12 @@
 
 @section('content')
 
-	<h2>Search for "{{ $tagName }}"</h2>
+	<h2>Search for keywords "{{ $searchText }}"</h2>
 
 	<hr/>
-	    @unless ( $publishables->isEmpty() )
+	    @unless ( $all_publishable->isEmpty() )
 
-			@foreach ($publishables as $publishable)
+			@foreach ($all_publishable as $publishable)
 
 				<div class="tag_product clearfix">
 

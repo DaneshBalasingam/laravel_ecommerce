@@ -107,12 +107,13 @@
 				</ul>
 			</div>
 			<div id="search_box">
-				<form action="action_page.php" method="POST">
-					<input type="text" class="search-field" placeholder="search for">
+				
+				{!!  Form::open(['url' => 'search']) !!}
+					<input name="search_text" type="text" class="search-field" placeholder="search for">
 					<button type="submit" class="search-submit right">
 						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 					</button>
-				</form> 
+				{!!  Form::close() !!}
 			</div>
 		</div>
 	</nav>

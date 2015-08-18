@@ -3,7 +3,10 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use App\Tag;
+use App\Publishable;
+use Request;
 use App\Banner;
 
 class PagesController extends Controller {
@@ -38,6 +41,35 @@ class PagesController extends Controller {
 	public function showAdmin()
 	{
 		return view('pages/admin');
+	}
+
+	public function showSearchResult() {
+
+		$input = Request::all();
+		
+		$search_items = explode(" ", $input['search_text']);
+
+		$all_publishable = collect([]);
+
+		foreach ( $search_items as $search_item ) {
+
+			$tag = \App\Tag::where('name', $search_item)->first();
+
+			if ( $tag ) {
+				$publishables = Publishable::searchByTag($tag);
+			} else {
+				$publishables = collect([]);
+			}
+			$all_publishable = $all_publishable->merge($publishables);
+		}
+
+		$searchText = $input['search_text'];
+
+		return view('pages.search')->with([
+			'all_publishable' => $all_publishable,
+			'searchText' => $searchText
+		]);
+
 	}
 
 

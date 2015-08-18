@@ -34,9 +34,9 @@ class RouteServiceProvider extends ServiceProvider {
 
 		//$router->model('tags', '\App\Tag');
 
-		$router->bind('tags', function($name){
+		/*$router->bind('tags', function($name){
 			return \App\Tag::where('name', $name)->firstOrFail();
-		});
+		});*/
 
 		$router->bind('pictures', function($name){
 			return \App\Picture::where('filename', $name)->firstOrFail();

@@ -6892,8 +6892,27 @@ general form styling
 	padding: 20px;
 }
 
+/****************
 
+	Home Page 
 
+*****************/
+
+.home_page_link {
+
+} 
+
+#home_promotion_thumbs {
+	margin-top: 40px;
+}
+
+.home_thumb h2 {
+	text-align: center;
+}
+
+.home_thumb {
+	border: none !important;
+}
 
 
 
@@ -7256,6 +7275,7 @@ h1.site-title a:hover {
 }
 
 .search-field {
+	color: black;
 	border-radius: 15px;
 	width: 180px;
     border: 1px #000 solid;

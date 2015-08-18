@@ -11,28 +11,17 @@
 |
 */
 
-
-
 Route::get('about', 'PagesController@showAbout');
 Route::get('contact', 'PagesController@showContact');
 Route::get('admin', 'PagesController@showAdmin');
 Route::get('/', 'PagesController@showHome');
 Route::get('/home', 'PagesController@showHome');
 
-/*Route::post('carts/{id}', function ($id) {
-    return 'Cart '.$id;
-});*/
-
-/*Route::get('articles', 'ArticlesController@index');
-Route::get('articles/create', 'ArticlesController@create');
-Route::get('articles/{id}', 'ArticlesController@show');
-Route::post('articles', 'ArticlesController@store');*/
+Route::post('search', 'PagesController@showSearchResult');
 
 Route::resource('articles','ArticlesController');
 
 Route::resource('pictures','PicturesController');
-//Route::get('pictures/JSONList', 'PicturesController@JSONList');
-
 
 Route::resource('galleries','GalleriesController');
 
