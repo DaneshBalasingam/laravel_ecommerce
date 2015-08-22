@@ -12,12 +12,12 @@ class Category extends Model {
 
 	public function parentCategories()
 	{
-	  return $this->belongsToMany('App\Category', 'category_subCategory', 'subCategory_id', 'category_id');
+	  return $this->belongsToMany('App\Category', 'category_subcategory', 'subcategory_id', 'category_id');
 	}
 
 	public function subCategories()
 	{
-	  return $this->belongsToMany('App\Category', 'category_subCategory', 'category_id', 'subCategory_id');
+	  return $this->belongsToMany('App\Category', 'category_subcategory', 'category_id', 'subcategory_id');
 	}
 
 	public function articles(){
